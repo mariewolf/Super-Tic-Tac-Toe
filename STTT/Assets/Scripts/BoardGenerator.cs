@@ -21,7 +21,7 @@ public class BoardGenerator : MonoBehaviour
             }
         }*/
 
-        GameObject bigGrid = Instantiate(bigGridPrefab, new Vector3(3.5f, 0, 3.5f), Quaternion.identity);
+        GameObject bigGrid = Instantiate(bigGridPrefab, new Vector3(3.6f, 0, 3.6f), Quaternion.identity);
 
         for(int i = 0; i < 3; i++)
         {
@@ -29,7 +29,7 @@ public class BoardGenerator : MonoBehaviour
             for(int j = 0; j < 3; j++)
             {
                 int z = j * 4;
-                GameObject subGrid = Instantiate(subGridPrefab, new Vector3((x + 2.85f*(i-1)), 0, (z + 2.85f*(j-1))), Quaternion.identity);
+                GameObject subGrid = Instantiate(subGridPrefab, new Vector3((x), 0, (z)), Quaternion.identity);
                 subGrid.transform.parent = transform;
                 subGrid.AddComponent<SubGrid>();
                 subGrid.GetComponent<SubGrid>().gridIndex = i * 3 + j;
