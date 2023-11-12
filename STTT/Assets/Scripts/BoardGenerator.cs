@@ -8,6 +8,7 @@ public class BoardGenerator : MonoBehaviour
 
     public GameObject space;
     public GameObject subGridPrefab;
+    public GameObject bigGridPrefab;
     void Start()
     {
         /*
@@ -20,6 +21,7 @@ public class BoardGenerator : MonoBehaviour
             }
         }*/
 
+        GameObject bigGrid = Instantiate(bigGridPrefab, new Vector3(3.5f, 0, 3.5f), Quaternion.identity);
 
         for(int i = 0; i < 3; i++)
         {
