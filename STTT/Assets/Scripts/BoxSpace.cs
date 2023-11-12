@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.PostProcessing;
 
 public class BoxSpace : MonoBehaviour
 {
@@ -18,5 +19,8 @@ public class BoxSpace : MonoBehaviour
         {
             GetComponent<Renderer>().material.color = Color.blue;
         }
+        //Bloom b = GetComponent<PostProcessVolume>().profile.GetSetting<Bloom>();
+        //set bloom intensity
+       // b.intensity.Override(1);
     }
 }

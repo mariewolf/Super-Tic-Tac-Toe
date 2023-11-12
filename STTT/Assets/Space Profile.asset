@@ -24,13 +24,13 @@ MonoBehaviour:
     value: 1
   softKnee:
     overrideState: 0
-    value: 0.5
+    value: 1
   clamp:
     overrideState: 0
-    value: 65472
+    value: 65469.07
   diffusion:
-    overrideState: 0
-    value: 9.96
+    overrideState: 1
+    value: 5.04
   anamorphicRatio:
     overrideState: 0
     value: -1
@@ -46,7 +46,7 @@ MonoBehaviour:
     defaultState: 1
   dirtIntensity:
     overrideState: 0
-    value: 0
+    value: 8
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
