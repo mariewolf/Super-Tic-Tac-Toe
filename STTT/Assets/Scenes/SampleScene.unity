@@ -277,6 +277,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: 0
   turn: 0
+  currentBox: -1
 --- !u!1 &1886371582
 GameObject:
   m_ObjectHideFlags: 0
@@ -323,6 +324,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   space: {fileID: 6808257594461482459, guid: 93b25519c4acf4a9588d01ee227418d4, type: 3}
   subGridPrefab: {fileID: 3209277851307946377, guid: 9f7ccfe5ba0d346f2a37e17d08ccf410, type: 3}
+  bigGridPrefab: {fileID: 3209277851307946377, guid: 48f84d56b11c69b4994ae0aefe5ebfd6, type: 3}
 --- !u!1001 &7540227742119966385
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -337,7 +339,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7104977353105768222, guid: 639f8955a8a9a4ba780989c0403fe915, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5
+      value: 5.5
       objectReference: {fileID: 0}
     - target: {fileID: 7104977353105768222, guid: 639f8955a8a9a4ba780989c0403fe915, type: 3}
       propertyPath: m_LocalPosition.y
@@ -345,7 +347,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7104977353105768222, guid: 639f8955a8a9a4ba780989c0403fe915, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 5
+      value: 5.5
       objectReference: {fileID: 0}
     - target: {fileID: 7104977353105768222, guid: 639f8955a8a9a4ba780989c0403fe915, type: 3}
       propertyPath: m_LocalRotation.w
