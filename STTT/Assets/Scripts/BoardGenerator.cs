@@ -34,7 +34,8 @@ public class BoardGenerator : MonoBehaviour
                     for(int t = 0; t < 3; t++)
                     {
                         GameObject newSpace = Instantiate(space,new Vector3(x + s + 0.5f, 0, z + t + 0.5f), Quaternion.identity,  subGrid.transform);
-                        
+                        newSpace.AddComponent<BoxSpace>();
+                        newSpace.GetComponent<BoxSpace>().subGridLocation = s * 3 + t;
                     }
                 }
                 

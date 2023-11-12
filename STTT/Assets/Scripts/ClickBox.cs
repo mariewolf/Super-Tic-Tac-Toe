@@ -18,15 +18,22 @@ public class ClickBox : MonoBehaviour
 		if(Physics.Raycast(ray, out hit))
 		{
 			if(Input.GetMouseButtonDown(0)){
-				print(hit.collider.name);
+
+                if(hit.collider.GetComponent<BoxSpace>().player != -1)
+                {
+                    return;
+                }
+
                 if(gm.player){
                     hit.collider.GetComponent<Renderer>().material.color = Color.blue;
+                    hit.collider.GetComponent<BoxSpace>().player = 1;
                 }
                 else
                 {
                     hit.collider.GetComponent<Renderer>().material.color = Color.red;
+                    hit.collider.GetComponent<BoxSpace>().player = 0;
                 }
-                
+                gm.CheckSubGridWin(hit.collider.GetComponent<BoxSpace>());
                 gm.SwitchPlayers();
             }
 
