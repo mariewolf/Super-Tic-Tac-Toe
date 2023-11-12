@@ -29,6 +29,8 @@ public class BoardGenerator : MonoBehaviour
                 int z = j * 4;
                 GameObject subGrid = Instantiate(subGridPrefab, new Vector3((x + 2.85f*(i-1)), 0, (z + 2.85f*(j-1))), Quaternion.identity);
                 subGrid.transform.parent = transform;
+                subGrid.AddComponent<SubGrid>();
+                subGrid.GetComponent<SubGrid>().gridIndex = i * 3 + j;
                 for(int s = 0; s < 3; s++)
                 {
                     for(int t = 0; t < 3; t++)

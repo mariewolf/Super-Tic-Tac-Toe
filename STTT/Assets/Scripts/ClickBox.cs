@@ -17,24 +17,27 @@ public class ClickBox : MonoBehaviour
 		ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 		if(Physics.Raycast(ray, out hit))
 		{
-			if(Input.GetMouseButtonDown(0)){
-
+			if(Input.GetMouseButtonDown(0) && hit.collider.gameObject.TryGetComponent<BoxSpace>(out BoxSpace box)){
+                if(!(gm.currentBox == -1 || gm.currentBox == hit.collider.transform.parent.GetComponent<SubGrid>().gridIndex))
+                {
+                    return;
+                }
                 if(hit.collider.GetComponent<BoxSpace>().player != -1)
                 {
                     return;
                 }
-
-                if(gm.player){
-                    hit.collider.GetComponent<Renderer>().material.color = Color.blue;
-                    hit.collider.GetComponent<BoxSpace>().player = 1;
-                }
-                else
+                hit.collider.GetComponent<BoxSpace>().Capture(gm.player ? 1 : 0);
+                bool gridCaptured = gm.CheckSubGridWin(hit.collider.GetComponent<BoxSpace>());
+                int boxLocation = hit.collider.GetComponent<BoxSpace>().subGridLocation;
+                if(gridCaptured)
                 {
-                    hit.collider.GetComponent<Renderer>().material.color = Color.red;
-                    hit.collider.GetComponent<BoxSpace>().player = 0;
+                    for(int i = 1; i <=9; i++)
+                    {
+                        hit.collider.transform.parent.GetChild(i).GetComponent<BoxSpace>().Capture(gm.player ? 1 : 0);
+                    }
                 }
-                gm.CheckSubGridWin(hit.collider.GetComponent<BoxSpace>());
                 gm.SwitchPlayers();
+                gm.currentBox = boxLocation;
             }
 
 		}
